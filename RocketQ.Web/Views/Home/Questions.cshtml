@@ -1,0 +1,30 @@
+﻿<div class="question-content">
+    <div class="user">
+        <img src="/user.svg" alt="">
+    </div>
+    <div class="question">
+        <p>@Model.Text</p>
+    </div>
+</div>
+@if (Model.Readed == false)
+{
+    <div class="actions">
+        <a href="#" class="check" onclick="Modal().markread(false, '@Model.Id.ToString()')>
+            <img src="/check.svg">
+            Mark as read
+        </a>
+        <a href="#" class="delete" onclick="Modal().markread(true, '@Model.Id.ToString()')">
+            <img src="/trash.svg">
+            Delete
+        </a>
+    </div>
+}
+else
+{
+    <div class="actions">
+        <a href="#" class="check">
+            <img src="/check.svg">
+            Question read
+        </a>
+    </div>
+}
